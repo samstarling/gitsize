@@ -4,12 +4,31 @@ body {
   font-size: 16px;
   width: 700px;
   margin: 50px auto;
+  color: #333;
 }
 
 h1 {
+  color: #ccc;
+  margin: 0;
+  font-size: 25px;
+}
+
+h2 {
+  font-weight: normal;
+  color: #ccc;
   margin: 0 0 1em 0;
   padding: 0 0 1em 0;
   border-bottom: 1px solid #eee;
+}
+
+h2 span {
+  color: #666;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   color: #aaa;
 }
 

@@ -55,6 +55,7 @@ GITHUB = {
 get '/' do
   github = Github.new login: GITHUB[:username], password: GITHUB[:password]
   @files = Array.new
+  @config = GITHUB 
   github.repos.contents.get(GITHUB[:username], GITHUB[:repo], GITHUB[:path]).each do |file|
     ghf = Gitsize::GithubFile.new file['name'], file['size']
     @files << ghf

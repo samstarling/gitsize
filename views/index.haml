@@ -4,7 +4,13 @@
     %link{"rel" => "stylesheet", "href" => "/css/style.css", "type" => "text/css"}
     %link{"rel" => "stylesheet", "href" => "http://fonts.googleapis.com/css?family=Lato:400,900", "type" => "text/css"}
   %body
-    %h1 gitsize
+    %h1 GITSIZE
+    %h2
+      %span= @config[:username]
+      \/
+      %span= @config[:repo]
+      \/
+      %span= @config[:path]
     %ul
       - @files.each do |file|
         %li{:class => file.class}
