@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %link{"rel" => "stylesheet", "href" => "/css/style.css", "type" => "text/css"}
+    %link{"rel" => "stylesheet", "href" => "http://fonts.googleapis.com/css?family=Lato:400,900", "type" => "text/css"}
+  %body
+    %h1 gitsize
+    %ul
+      - @files.each do |file|
+        %li{:class => file.class}
+          = file.name
+          %small (#{file.friendly_size})

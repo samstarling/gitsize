@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+gem 'github_api'
+gem 'sinatra'
+gem 'haml'
+gem 'actionpack'
