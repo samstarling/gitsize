@@ -16,9 +16,20 @@ h1 {
 h2 {
   font-weight: normal;
   color: #ccc;
-  margin: 0 0 1em 0;
+  margin: 0 0 0 0;
   padding: 0 0 1em 0;
   border-bottom: 1px solid #eee;
+}
+
+h3 {
+  background: rgb(252, 248, 227);
+  border: 1px solid rgb(251, 238, 213);
+  color: rgb(192, 152, 83);
+  margin: 0;
+  padding: 0.3em 0.5em 0.4em 0.5em;
+  margin: 1.1em 0 1.1em 0;
+  font-weight: normal;
+  font-size: 16px;
 }
 
 h2 span {

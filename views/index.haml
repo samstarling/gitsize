@@ -11,8 +11,10 @@
       %span= @config[:repo]
       \/
       %span= @config[:path]
+    %h3
+      Commit: #{@commit}
     %ul
-      - @files.each do |commitfile|
+      - @commit.gitcommitfiles.each do |commitfile|
         %li{:class => commitfile.size_class}
           = commitfile.gitfile
           %small (#{commitfile.friendly_size})

@@ -6,6 +6,7 @@ namespace :gitsize do
   desc "Load latest commit"
   task :latest_commit do
     Gitcommitfile.delete_all
+    Gitcommit.delete_all
     
     GITHUB = {
       username: ENV['github_username'],
@@ -16,16 +17,13 @@ namespace :gitsize do
     }
     
     github = Github.new login: GITHUB[:username], password: GITHUB[:password]
-    @files = Array.new
-    @config = GITHUB 
+    
+    commit_id = github.repos.commits.list(GITHUB[:username], GITHUB[:repo]).first.sha
+    
     github.repos.contents.get(GITHUB[:username], GITHUB[:repo], GITHUB[:path]).each do |file|
-      gitfile = Gitfile.find_or_create_by_name(file['name'])
-      gitcommit = Gitcommit.new
-      gitcommit.save
-      puts file['size']
       gitcommitfile = Gitcommitfile.new(
-        :gitcommit => gitcommit,
-        :gitfile => gitfile,
+        :gitcommit => Gitcommit.find_or_create_by_commit_id(commit_id),
+        :gitfile => Gitfile.find_or_create_by_name(file['name']),
         :size => Integer(file['size'])
       )
       gitcommitfile.save

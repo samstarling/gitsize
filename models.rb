@@ -1,12 +1,18 @@
+require './helpers'
+
 class Gitcommit < ActiveRecord::Base
   has_many :gitcommitfiles
+  
+  def to_s
+    "#{commit_id}"
+  end
 end
 
 class Gitfile < ActiveRecord::Base
   has_many :gitcommitfiles
   
   def to_s
-    "#{id} #{name}"
+    "#{name}"
   end
 end
 
@@ -19,7 +25,7 @@ class Gitcommitfile < ActiveRecord::Base
   end
   
   def friendly_size
-    "#{size}"
+    readable_file_size size
   end
   
   def size_class

@@ -5,9 +5,9 @@ KILO_SIZE = 1024.0
 def readable_file_size(size, precision=1)
   case
   when size == 1
-    "1 byte"
+    "1 B"
   when size < KILO_SIZE
-    "%d bytes" % size
+    "%d B" % size
   when size < MEGA_SIZE
     "%.#{precision}f KB" % (size / KILO_SIZE)
   when size < GIGA_SIZE
