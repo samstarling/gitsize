@@ -13,7 +13,7 @@
       \/
       %span= @config[:path]
     %h3
-      Commit: #{@commit}
+      Commit: <tt>#{@commit}</tt>
     %ul
       - @commit.gitcommitfiles.each do |commitfile|
         %li{:class => commitfile.size_class}

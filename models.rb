@@ -4,7 +4,7 @@ class Gitcommit < ActiveRecord::Base
   has_many :gitcommitfiles
   
   def to_s
-    "#{commit_id}"
+    "#{commit_id[0..10]}"
   end
 end
 
