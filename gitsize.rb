@@ -5,7 +5,7 @@ require 'sinatra/activerecord'
 require 'haml'
 require './models'
 
-DB = 'sqlite:///db/gitsize.db' || ENV['HEROKU_POSTGRESQL_COPPER_URL']
+DB = ENV['HEROKU_POSTGRESQL_COPPER_URL'] || 'sqlite:///db/gitsize.db'
 set :database, DB
 
 GITHUB = {
