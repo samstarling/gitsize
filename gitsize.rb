@@ -6,7 +6,8 @@ require 'haml'
 require './models'
 require './helpers'
 
-set :database, 'sqlite:///db/gitsize.db'
+DB = 'sqlite:///db/gitsize.db' || ENV['HEROKU_POSTGRESQL_COPPER_URL']
+set :database, DB
 
 GITHUB = {
   username: ENV['github_username'],
